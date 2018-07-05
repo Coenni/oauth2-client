@@ -1,5 +1,12 @@
 # OAuth2 client
 
+## Update:
+This repository is forked from danielsz/oauth2-client. I used this tool in my project and it is needed to add some little useful features so with adding them I think it is more friendly.
+It is added exporting as jar file, reading credentials from properties file, and using custom token url features.
+If you want export/import as jar, run "mvn package", and in covering project you can call easily with 2 lines of code:
+ProtectedResourceManager manager = new ProtectedResourceManager(ProtectedResourceManager.client.getAccessToken());
+String result = ProtectedResourceManager.fetch(ProtectedResourceManager.client, manager, nextId);
+
 ## Rationale
 
 Java OAuth2 clients are plentiful. Oddly enough, they all seem to focus on the authorization code grant type. This library aims to provide a solution for the resource owner password grant type. 
