@@ -50,7 +50,7 @@ public class Token {
 		}
 		
 		public Token refresh(OAuth2Client client) {
-			OAuth2Config oauthConfig = new OAuth2Config.OAuth2ConfigBuilder(client.getUsername(), client.getPassword(), client.getClientId(), client.getClientSecret(), client.getSite())
+			OAuth2Config oauthConfig = new OAuth2Config.OAuth2ConfigBuilder(client.getUsername(), client.getPassword(), client.getClientId(), client.getClientSecret(), client.getSite(), client.getTokenUrl())
 				.grantType("refresh_token").build();
 			return OAuthUtils.refreshAccessToken(this, oauthConfig);
 		}
